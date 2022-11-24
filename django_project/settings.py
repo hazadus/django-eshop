@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Local
     "accounts.apps.AccountsConfig",
     "shop.apps.ShopConfig",
+    "cart.apps.CartConfig",
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # Local
+                "cart.context_processors.cart",
             ],
         },
     },
@@ -136,3 +139,5 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CART_SESSION_ID = "cart"
