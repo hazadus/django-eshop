@@ -11,7 +11,7 @@ def product_list(request: HttpRequest, category_slug: str = None) -> HttpRespons
     """
     category = None
 
-    categories = Category.objects.all()
+    categories = Category.objects.filter(parent_category=None)
     products = Product.objects.filter(available=True)
 
     if category_slug:
